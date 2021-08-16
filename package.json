@@ -2,8 +2,14 @@
   "name": "bilimini",
   "version": "1.5.4",
   "description": "Hide!bilibili",
-  "main": "main.js",
+  "main": "bundle/dist/main.js",
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
   "scripts": {
+    "bundle": "./node_modules/.bin/webpack --config webpack.config.js",
     "start": "electron .",
     "win64": "./node_modules/.bin/electron-builder --x64",
     "win32": "./node_modules/.bin/electron-builder --ia32",
@@ -12,8 +18,13 @@
   "repository": "https://github.com/chitosai/bilimini",
   "author": "TheC",
   "devDependencies": {
-    "electron": "^9.4.4",
-    "electron-builder": "^22.10.5"
+    "electron": "^13.1.9",
+    "electron-builder": "^22.11.7",
+    "electron-store": "^8.0.0",
+    "prettier": "^2.3.2",
+    "ts-loader": "^9.2.5",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5"
   },
   "build": {
     "mac": {
@@ -22,7 +33,7 @@
   },
   "dependencies": {
     "electron-is-accelerator": "^0.1.2",
-    "electron-store": "^1.1.0",
+    "electron-log": "^4.4.1",
     "graceful-fs": "^4.2.6"
   }
 }
